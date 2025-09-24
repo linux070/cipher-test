@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caesar Cipher</title>
+  <title>Caesar Cipher (Interactive)</title>
   <style>
     body {
       font-family: monospace;
@@ -14,38 +14,39 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
+      margin: 0;
+      padding: 20px;
     }
     h1 {
       color: #00e6e6;
     }
-    textarea, input, select, button {
+    textarea, input, select {
       margin: 10px 0;
       padding: 10px;
       border-radius: 6px;
       border: none;
       outline: none;
       font-family: monospace;
+      background: #1e1e1e;
+      color: #00ff99;
     }
     textarea {
-      width: 300px;
+      width: 320px;
       height: 80px;
     }
-    button {
-      background: #00ff99;
-      color: #121212;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #00e6e6;
+    input, select {
+      width: 150px;
+      text-align: center;
     }
     .output {
       margin-top: 15px;
       padding: 10px;
       background: #1e1e1e;
       border-radius: 6px;
-      width: 320px;
+      width: 340px;
+      min-height: 50px;
       word-wrap: break-word;
+      font-weight: bold;
     }
     pre {
       color: #00ff99;
@@ -71,13 +72,12 @@
 
   <h1>Caesar Cipher Program</h1>
 
-  <textarea id="text" placeholder="Enter your message..."></textarea>
+  <textarea id="text" placeholder="Type your message..."></textarea>
   <input type="number" id="shift" placeholder="Shift number" value="3" />
   <select id="direction">
     <option value="encode">Encode</option>
     <option value="decode">Decode</option>
   </select>
-  <button onclick="runCipher()">Run Cipher</button>
 
   <div class="output" id="result">Your result will appear here...</div>
 
@@ -104,14 +104,22 @@
       return result;
     }
 
-    function runCipher() {
+    function updateCipher() {
       const text = document.getElementById("text").value;
-      const shift = parseInt(document.getElementById("shift").value);
+      const shift = parseInt(document.getElementById("shift").value) || 0;
       const direction = document.getElementById("direction").value;
 
       const output = caesarCipher(text, shift, direction);
-      document.getElementById("result").textContent = output;
+      document.getElementById("result").textContent = output || "Your result will appear here...";
     }
+
+    // Attach events to make it interactive
+    document.getElementById("text").addEventListener("input", updateCipher);
+    document.getElementById("shift").addEventListener("input", updateCipher);
+    document.getElementById("direction").addEventListener("change", updateCipher);
+
+    // Run once at start
+    updateCipher();
   </script>
 </body>
 </html>
