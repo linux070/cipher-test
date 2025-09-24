@@ -10,6 +10,7 @@ body {
   padding: 20px;
 }
 
+/*styling for the first heading.  */
 h1 {
   color: #4a90e2;
   margin-bottom: 20px;
@@ -32,7 +33,7 @@ textarea {
   height: 90px;
   resize: none;
 }
-
+/* the fill-ins.  */
 input[type="text"] {
   width: 160px;
   text-align: center;
@@ -44,7 +45,7 @@ input:focus {
   box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
   outline: none;
 }
-
+/*btn decoration  */
 button {
   cursor: pointer;
   border: none;
