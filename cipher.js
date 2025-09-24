@@ -1,5 +1,3 @@
-let currentDirection = null; // Start with no mode selected
-
 function caesarCipher(text, shift, direction) {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   let result = "";
@@ -13,7 +11,7 @@ function caesarCipher(text, shift, direction) {
       let position = alphabet.indexOf(lowerChar);
       let newPosition = (position + shift + 26) % 26;
       let newChar = alphabet[newPosition];
-      result += (char === char.toUpperCase()) ? newChar.toUpperCase() : newChar;
+      result += char === char.toUpperCase() ? newChar.toUpperCase() : newChar;
     } else {
       result += char;
     }
@@ -21,34 +19,38 @@ function caesarCipher(text, shift, direction) {
   return result;
 }
 
-function updateCipher(direction) {
+function runCipher(direction) {
   const text = document.getElementById("text").value;
   let shift = parseInt(document.getElementById("shift").value);
   if (isNaN(shift)) shift = 0;
 
-  currentDirection = direction;
-
   const output = caesarCipher(text, shift, direction);
-  document.getElementById("result").textContent = output || "No text entered.";
-  document.getElementById("status").textContent = `Mode: ${direction.charAt(0).toUpperCase() + direction.slice(1)} | Shift: ${shift}`;
+  document.getElementById("result").textContent =
+    output || "Your result will appear here...";
+  document.getElementById("status").textContent = `Mode: ${
+    direction.charAt(0).toUpperCase() + direction.slice(1)
+  } | Shift: ${shift}`;
 
-  // Update button styles
-  document.getElementById("encodeBtn").classList.toggle("active", direction === "encode");
-  document.getElementById("decodeBtn").classList.toggle("active", direction === "decode");
+  // make the btns active ....
+  document.getElementById("encodeBtn").classList.remove("active");
+  document.getElementById("decodeBtn").classList.remove("active");
+  document.getElementById(direction + "Btn").classList.add("active");
 }
 
 function copyResult() {
   const resultText = document.getElementById("result").textContent;
-  if (resultText && resultText !== "Result will appear here after you choose a mode...") {
+  if (resultText && resultText !== "Your result will appear here...") {
     navigator.clipboard.writeText(resultText).then(() => {
       alert("Copied to clipboard!");
     });
   }
 }
 
-// Button actions
-document.getElementById("encodeBtn").addEventListener("click", () => updateCipher("encode"));
-document.getElementById("decodeBtn").addEventListener("click", () => updateCipher("decode"));
-
-
+//  this will work with the click events.
+document
+  .getElementById("encodeBtn")
+  .addEventListener("click", () => runCipher("encode"));
+document
+  .getElementById("decodeBtn")
+  .addEventListener("click", () => runCipher("decode"));
 
