@@ -54,3 +54,4 @@ document
   .getElementById("decodeBtn")
   .addEventListener("click", () => runCipher("decode"));
 
+// thanks to chatGPT for this js.
