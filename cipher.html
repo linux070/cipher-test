@@ -1,19 +1,16 @@
+<h1>Caesar Cipher Demo</h1>
+<textarea id="text" placeholder="type your message..."></textarea>
+<input type="text" id="shift" placeholder="type in your shift number" value="" />
 
-<h1> ZAMA-TEST CIPHER <h1>
-
-<h1>Caesar Cipher Interactive Demo</h1>
-
-<textarea id="text" placeholder="Type your message..."></textarea>
-<input type="text" id="shift" placeholder="type in your shift number (e.g. 3)" value="" />
-
+<!--  the buttons for encode and decode!-->
 <div class="direction-buttons">
   <button id="encodeBtn">Encode</button>
   <button id="decodeBtn">Decode</button>
 </div>
 
 <div class="output-container">
-  <div class="output" id="result">Result will appear here after you choose a mode...</div>
+  <div class="output" id="result">Your result will appear here...</div>
   <button class="copy-btn" onclick="copyResult()">Copy</button>
 </div>
-
-<div class="status" id="status">No mode selected yet</div>
+<div> </div> <!-- nothing here, make the line just break. -->
+<div class="status" id="status">Mode: None selected</div>
