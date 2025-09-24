@@ -11,11 +11,13 @@ body {
 }
 
 h1 {
-  color: #4A90E2;
+  color: #4a90e2;
   margin-bottom: 20px;
 }
 
-textarea, input, button {
+textarea,
+input,
+button {
   margin: 10px 0;
   padding: 12px 15px;
   border-radius: 10px;
@@ -36,8 +38,9 @@ input[type="text"] {
   text-align: center;
 }
 
-textarea:focus, input:focus {
-  border-color: #4A90E2;
+textarea:focus,
+input:focus {
+  border-color: #4a90e2;
   box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
   outline: none;
 }
@@ -51,7 +54,7 @@ button {
 
 button.copy-btn {
   margin-left: 10px;
-  background: #F15A29;
+  background: #f15a29;
   color: white;
 }
 button.copy-btn:hover {
@@ -71,9 +74,9 @@ button.copy-btn:hover {
 }
 .direction-buttons button.active,
 .direction-buttons button:hover {
-  background: #4A90E2;
+  background: #4a90e2;
   color: white;
-  border-color: #4A90E2;
+  border-color: #4a90e2;
 }
 
 .output-container {
@@ -99,4 +102,3 @@ button.copy-btn:hover {
   font-size: 13px;
   color: #666;
 }
-
