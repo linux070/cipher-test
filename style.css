@@ -1,6 +1,6 @@
 body {
   font-family: "Segoe UI", sans-serif;
-  background: #f9f9f9; /* soft light background */
+  background: #f9f9f9;
   color: #333;
   display: flex;
   flex-direction: column;
@@ -10,13 +10,12 @@ body {
   padding: 20px;
 }
 
-/* Heading styling */
+/*styling for the first heading.  */
 h1 {
-  color: #4a90e2; /* main accent */
+  color: #4a90e2;
   margin-bottom: 20px;
 }
 
-/* Common input/textarea/button styles */
 textarea,
 input,
 button {
@@ -34,27 +33,24 @@ textarea {
   height: 90px;
   resize: none;
 }
-
+/* the fill-ins.  */
 input[type="text"] {
   width: 160px;
   text-align: center;
 }
 
-/* Focus effects */
 textarea:focus,
 input:focus {
   border-color: #4a90e2;
   box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
   outline: none;
 }
-
-/* Button decoration */
+/*btn decoration  */
 button {
   cursor: pointer;
   border: none;
   font-weight: 600;
   transition: all 0.2s;
-  border-radius: 8px; /* slightly rounded buttons */
 }
 
 button.copy-btn {
@@ -66,7 +62,6 @@ button.copy-btn:hover {
   background: #d44d20;
 }
 
-/* Encode/Decode buttons */
 .direction-buttons {
   display: flex;
   gap: 10px;
@@ -85,7 +80,6 @@ button.copy-btn:hover {
   border-color: #4a90e2;
 }
 
-/* Output area */
 .output-container {
   margin-top: 15px;
   display: flex;
@@ -104,9 +98,10 @@ button.copy-btn:hover {
   color: #333;
 }
 
-/* Status line */
 .status {
   margin-top: 8px;
   font-size: 13px;
   color: #666;
 }
+
+/*linuxmode  */
